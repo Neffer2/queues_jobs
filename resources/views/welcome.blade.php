@@ -8,5 +8,9 @@
 </head>
 <body>
     Soy un simple html
+    <br>
+    @if (session('success'))
+        {{ session('success') }}
+    @endif
 </body>
 </html>

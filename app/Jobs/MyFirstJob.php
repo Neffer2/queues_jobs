@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Greeting;
 
 class MyFirstJob implements ShouldQueue
 {
@@ -24,6 +25,9 @@ class MyFirstJob implements ShouldQueue
      */
     public function handle(): void
     {
-        echo $this->sms;
+        $greetings = new Greeting;
+        $greetings->greeting = $this->sms;
+        $greetings->save();
     }
 }
+ 
