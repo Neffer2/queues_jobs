@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('QUEUE_CONNECTION', 'sync'),
+    'default' => env('QUEUE_CONNECTION', 'sqs'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,9 +56,9 @@ return [
             'key' => env('AWS_ACCESS_KEY_ID'),
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
             'prefix' => env('SQS_PREFIX', 'https://sqs.us-east-2.amazonaws.com/339712708540/MyFirstQueue'),
-            'queue' => env('MyFirstQueue', 'default'),
+            'queue' => env('QUEUE', 'MyFirstQueue'),
             'suffix' => env('SQS_SUFFIX'),
-            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+            'region' => env('AWS_DEFAULT_REGION', 'us-east-2'),
             'after_commit' => false,
         ],
 
